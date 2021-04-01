@@ -20,6 +20,10 @@ textarea {
   border-radius: 0;
   border-bottom: 10px solid black;
 }
+.text-green{
+  color:#1cb81c;
+  font-size: larger;
+}
 
 .description {
   white-space: pre-wrap;
@@ -28,19 +32,49 @@ textarea {
 .time-block {
   text-align: center;
   border-radius: 15px;
+  margin-right: 120px;
+  margin-left: 120px;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  padding: 40px;
 }
 
 .row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
+  height: 50px;
+  width: 100%;
+  font-size: 1em;
+  line-height: 1.5;
+  border-radius: 15px;
+}
+
+.plannerRow {
+  height: 50px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 1em;
+  line-height: 1.5;
+  height:52px;
+  border-radius: 15px;
 }
 
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  height:100%;
+  width: 100%;
+  text-align: center;
+  border-radius: 15px 0px 0px 15px;
+  display: inline-block;
+  font-size: 1em;
+  
 }
+
+
+ 
 
 .past {
   background-color: #d3d3d3;
@@ -63,6 +97,11 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  font-size: 1.5em;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  
 }
 
 .saveBtn i:hover {
