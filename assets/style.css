@@ -20,13 +20,19 @@ textarea {
   border-radius: 0;
   border-bottom: 10px solid black;
 }
-.text-green{
+.date{
   color:#1cb81c;
-  font-size: larger;
+  font-size: 5em;
 }
 
-.description {
-  white-space: pre-wrap;
+.col-md-2{
+  padding-bottom: 5px
+}
+.col-md-9{
+  padding-bottom: 5px
+}
+.col-md-1{
+  padding-top: 10px
 }
 
 .time-block {
@@ -41,7 +47,6 @@ textarea {
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
   border-top: 1px solid white;
   height: 50px;
   width: 100%;
@@ -73,22 +78,36 @@ textarea {
   
 }
 
-
- 
-
 .past {
   background-color: #d3d3d3;
-  color: white;
+  color: black;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  height:62px;
+  border-radius: 15px;
+  
+  
+  
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #ffd561;
   color: white;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  height:62px;
+  border-radius: 15px;
+  
+  
 }
 
 .future {
   background-color: #77dd77;
   color: white;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  height:62px;
+  border-radius: 15px;
 }
 
 .saveBtn {
@@ -101,7 +120,8 @@ textarea {
   width: 100%;
   height: 100%;
   text-align: center;
-  
+  float: inline-end;
+  padding-top:10px;
 }
 
 .saveBtn i:hover {

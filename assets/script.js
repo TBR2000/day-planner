@@ -20,10 +20,11 @@ $plannerDiv.empty();
     
     //row components
     let $rowDiv = $('<div>');
-    $rowDiv.addClass('row');
-    $rowDiv.addClass('plannerRow');
     $rowDiv.addClass('present')
     $rowDiv.attr('hour-index',hour);
+    $rowDiv.attr('style', 'display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: space-between;')
+    //$rowDiv.attr()
+
   
     //Time box of row
     let $col2Time = $('<div>');
@@ -31,7 +32,8 @@ $plannerDiv.empty();
   
     // create hour 
     const $hourSpn = $('<span>');
-    $hourSpn.attr('class','hour');
+    $hourSpn.attr('class','present');
+    $hourSpn.attr('style','border-top: 1px dashed #000000; height:100%; width: 100%; text-align: center; border-radius: 15px 0px 0px 15px; display: inline-block; font-size: 2em;');
     
     // format hours for display
     let displayHour = 0;
@@ -56,8 +58,11 @@ $plannerDiv.empty();
 
     $dailyPlanSpn.attr('id',`input-${index}`);
     $dailyPlanSpn.attr('hour-index',index);
+    $dailyPlanSpn.attr('class','present')
     $dailyPlanSpn.attr('type','text');
-    $dailyPlanSpn.attr('class','row');
+    $dailyPlanSpn.attr('style', 'height:100%; width: 100%; margin-top: 2px margin-bottom: 2px; font-size: 1em; line-height: 1.5; border-radius: 15px;white-space: pre-wrap;border-top: 1px solid white;font-size: 1em;line-height: 1.5;border-radius: 15px;');
+
+   
 
     // access index from data array for hour 
     $dailyPlanSpn.val( planTextArr[index] );
@@ -65,6 +70,7 @@ $plannerDiv.empty();
     // create col to control width
     let $col9IptDiv = $('<div>');
     $col9IptDiv.addClass('col-md-9');
+
 
     // add col width and row component to row
     $rowDiv.append($col9IptDiv);
@@ -77,7 +83,7 @@ $plannerDiv.empty();
       let $saveBtn = $('<i>');
       $saveBtn.attr('id',`saveid-${index}`);
       $saveBtn.attr('save-id',index);
-      $saveBtn.attr('class',"saveBtn; far fa-save saveIcon");
+      $saveBtn.attr('class',"saveBtn; fas fa-save fa-spin fa-3x");
      
       
       // add col width and row component to row
@@ -85,25 +91,21 @@ $plannerDiv.empty();
       $col1Save.append($saveBtn);
        
       //color based on time
-      updateRow();
-      
+      if ( hour < nowHour24) {
+        $hourSpn.attr('class','past');
+        $rowDiv.attr('class',' past')
+        $dailyPlanSpn.attr('class','past');
+
+      } else if ( hour > nowHour24) {
+        $hourSpn.attr('class','future');
+        $rowDiv.attr('class',' future')
+        $dailyPlanSpn.attr('class','future');
+
+      };
+      console.log(hour, nowHour24)
       // add row 
       $plannerDiv.append($rowDiv);
     };
-    
-  
-    function updateRow ($hourRow,hour) {
-      console.log(nowHour24, hour)
-    
-    if ( hour < nowHour24) {
-      $hourRow.removeclass('present')
-      $hourRow.setclass('past')
-    } else if ( hour > nowHour24) {
-      $hourRow.removeclass('present')
-      $hourRow.setclass('future')
-    } 
-    
-  };
 
   $(document).on('click','i', function(event) {
     event.preventDefault(); 
